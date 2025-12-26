@@ -7,48 +7,38 @@
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
+    <!-- Global Tooltip -->
+    <div id="globalTooltip" class="global-tooltip"></div>
+
     <div class="dashboard-container">
-        <!-- Header -->
+        <!-- Header with Drag & Drop -->
         <header class="dashboard-header">
             <h1>דשבורד ניהול צוות</h1>
             <div class="header-controls">
                 <input type="file" id="fileInput" accept=".xlsx,.xls" hidden>
-                <button id="uploadBtn" class="btn btn-primary">טען קובץ תכנון</button>
+                <div id="dropZone" class="drop-zone">
+                    <div class="drop-zone-content">
+                        <span class="drop-icon">📁</span>
+                        <span class="drop-text">גרור קובץ לכאן או</span>
+                        <button id="uploadBtn" class="btn btn-primary">בחר קובץ</button>
+                    </div>
+                    <div class="drop-zone-overlay hidden">
+                        <span class="drop-overlay-icon">⬇️</span>
+                        <span class="drop-overlay-text">שחרר לטעינה</span>
+                    </div>
+                </div>
                 <div id="fileInfo" class="file-info hidden"></div>
             </div>
         </header>
 
         <!-- Main Dashboard -->
         <div id="dashboard" class="dashboard-content hidden">
-            
-            <!-- Summary Cards -->
-            <section class="summary-section">
-                <div class="card summary-card">
-                    <div class="card-content">
-                        <h3>סך העובדים</h3>
-                        <div class="card-value" id="totalEmployees">0</div>
-                    </div>
-                </div>
-                
-                <div class="card summary-card">
-                    <div class="card-content">
-                        <h3>משימות פעילות</h3>
-                        <div class="card-value" id="activeTasks">0</div>
-                    </div>
-                </div>
-                
-                <div class="card summary-card">
-                    <div class="card-content">
-                        <h3>עובדים בעומס גבוה</h3>
-                        <div class="card-value warning" id="overloadedEmployees">0</div>
-                    </div>
-                </div>
-                
-                <div class="card summary-card">
-                    <div class="card-content">
-                        <h3>תקציב בפועל</h3>
-                        <div class="card-value" id="totalBudget">0</div>
-                    </div>
+
+            <!-- Version Status -->
+            <section class="version-section">
+                <div class="card">
+                    <h2>מצב גרסה</h2>
+                    <div id="versionStatus" class="version-status"></div>
                 </div>
             </section>
 
@@ -86,19 +76,24 @@
             <!-- Employee Details -->
             <section class="details-section">
                 <div class="card">
-                    <h2>פירוט לפי עובד</h2>
+                    <div class="section-header">
+                        <h2>כל המשימות</h2>
+                        <div class="filter-controls">
+                            <select id="employeeFilter" class="filter-select">
+                                <option value="all">כל העובדים</option>
+                            </select>
+                            <input type="text" id="taskSearch" class="filter-search" placeholder="חפש משימה...">
+                        </div>
+                    </div>
                     <div id="employeeDetails" class="employee-details"></div>
                 </div>
             </section>
 
         </div>
 
-        <!-- Empty State -->
-        <div id="emptyState" class="empty-state">
-            <div class="empty-icon">📊</div>
-            <h2>טען קובץ תכנון כדי להתחיל</h2>
-            <p>העלה קובץ אקסל עם תכנון העבודה של הצוות</p>
-            <button id="uploadBtnEmpty" class="btn btn-primary btn-large">בחר קובץ</button>
+        <!-- Empty State - Hidden by default -->
+        <div id="emptyState" class="empty-state hidden">
+            <!-- Removed content -->
         </div>
     </div>
 
