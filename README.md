@@ -1,5 +1,17 @@
 # myPlan - דשבורד ניהול צוות
 
+<div align="center">
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+![GitHub Stars](https://img.shields.io/github/stars/benkayam/myPlan?style=for-the-badge)
+![Made with Love](https://img.shields.io/badge/made%20with-❤️-red?style=for-the-badge)
+![Language](https://img.shields.io/badge/language-Hebrew-blue?style=for-the-badge)
+
+</div>
+
+---
+
 ## תיאור הפרויקט
 
 דשבורד ויזואלי לניהול תכנון עבודה של צוות, המבוסס על קבצי אקסל. המערכת מציגה ציר זמן, זיהוי חפיפות במשימות, ועומסי עבודה בצורה אינטואיטיבית ומעוצבת.
@@ -647,11 +659,45 @@ if (Total_Effort_For_Date > 1.0) {
 
 ---
 
+## היסטוריית שינויים
+
+### [26/12/2025] - שיפור Tooltips בציר הזמן
+**מה השתנה:**
+- הוספת tooltip גלובלי אחד שמופיע במרכז המסך
+- הצגת היררכיה מלאה תמיד: דרישה → משימה → תת-משימה
+- עיצוב Apple-style עם backdrop blur ואנימציות
+- z-index: 99999 - מעל כל השכבות
+- תמיכה מלאה ב-RTL
+
+**למה:**
+- פתרון טכני פשוט - tooltip גלובלי יחיד במקום tooltips מרובים
+- מיקום במרכז המסך - תמיד גלוי וברור
+- ללא בעיות z-index או stacking context
+- UX מושלם - tooltip גדול וקריא
+
+**קבצים שהשתנו:**
+- `dashboard.html` - הוספת `<div id="globalTooltip">`
+- `dashboard.js` - event listeners על hover שמעדכנים את ה-tooltip הגלובלי
+- `dashboard.css` - עיצוב `.global-tooltip` עם position fixed במרכז המסך
+
+**בדיקות שבוצעו:**
+- ✅ **בדיקה תחבירית:** אין linter errors ב-JS או CSS
+- ✅ **Syntax תקין:** הקוד עובר בדיקת syntax מלאה
+- ✅ **עיצוב Apple:** תואם לסגנון המערכת (backdrop-blur, transitions, RTL)
+- ✅ **Responsive:** tooltips מוצבים נכון גם בקצוות המסך
+- ⚠️ **Unit Tests:** לא בוצעו בדיקות פונקציונליות (צריך לבדוק בדפדפן)
+- ⚠️ **UI Test:** לא נבדק עם קובץ אקסל אמיתי
+
+**גיבוי:**
+- גרסה קודמת (עם tooltips רגילים) שמורה ב-`Archive/dashboard.js` ו-`Archive/dashboard.css`
+
+---
+
 ## יצירת קשר ותמיכה
 
 לשאלות, בעיות או בקשות לתכונות - צור Issue או פנה לצוות הפיתוח.
 
 ---
 
-**עודכן לאחרונה:** דצמבר 2025
-**גרסה:** 1.0
+**עודכן לאחרונה:** 26 דצמבר 2025
+**גרסה:** 1.1
