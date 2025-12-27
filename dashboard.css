@@ -123,10 +123,11 @@ h3 {
 }
 
 .dashboard-header .header-logo {
-    height: 50px;
+    height: 35px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1); /* הופך את הלוגו ללבן */
+    mix-blend-mode: screen; /* מסיר את הרקע הכהן, משאיר רק את הצבעים */
+    opacity: 0.95;
     position: relative;
     z-index: 1;
 }
