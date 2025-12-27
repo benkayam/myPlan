@@ -1375,27 +1375,7 @@ h3 {
         height: 35px !important;
         width: auto !important;
         max-width: 35px !important;
-        filter: none !important; /* בהדפסה - מציג את הצבע המקורי */
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-    
-    .footer {
-        display: block !important;
-        height: 40px !important;
-        width: 100% !important;
-        overflow: hidden !important;
-        text-align: center !important;
-    }
-    
-    .footer-logo {
-        display: inline-block !important;
-        height: 30px !important;
-        width: 30px !important;
-        max-width: 30px !important;
-        max-height: 30px !important;
-        object-fit: scale-down !important;
-        transform: scale(0.7) !important;
+        filter: none !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -1409,6 +1389,26 @@ h3 {
     .dashboard-header h1 {
         color: var(--primary) !important;
         text-shadow: none !important;
+    }
+    
+    /* PDF Footer - לוגו בתחתית */
+    .pdf-footer {
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        height: 40px;
+    }
+    
+    .pdf-footer-logo {
+        height: 30px !important;
+        width: auto !important;
+        max-width: 30px !important;
+        max-height: 30px !important;
+        object-fit: contain !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 }
 
