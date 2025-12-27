@@ -116,6 +116,21 @@ h3 {
     filter: blur(40px);
 }
 
+.dashboard-header .header-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dashboard-header .header-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* הופך את הלוגו ללבן */
+    position: relative;
+    z-index: 1;
+}
+
 .dashboard-header h1 {
     color: var(--white);
     font-size: 2rem;
@@ -1348,6 +1363,27 @@ h3 {
     .filter-select,
     .filter-search {
         width: 100%;
+    }
+}
+
+/* Print Styles - הדפסה */
+@media print {
+    .header-logo {
+        height: 40px;
+        filter: none !important; /* בהדפסה - מציג את הצבע המקורי */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .dashboard-header {
+        background: white !important;
+        border: 2px solid var(--primary);
+        box-shadow: none !important;
+    }
+    
+    .dashboard-header h1 {
+        color: var(--primary) !important;
+        text-shadow: none !important;
     }
 }
 
