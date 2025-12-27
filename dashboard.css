@@ -1390,25 +1390,5 @@ h3 {
         color: var(--primary) !important;
         text-shadow: none !important;
     }
-    
-    /* PDF Footer - לוגו בתחתית */
-    .pdf-footer {
-        position: fixed;
-        bottom: 20px;
-        left: 0;
-        right: 0;
-        text-align: center;
-        height: 40px;
-    }
-    
-    .pdf-footer-logo {
-        height: 30px !important;
-        width: auto !important;
-        max-width: 30px !important;
-        max-height: 30px !important;
-        object-fit: contain !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
 }
 

@@ -1166,10 +1166,6 @@ window.exportVersionToPDF = function(versionName) {
                 ${featuresHTML}
             </div>
             
-            <div class="pdf-footer">
-                <img src="logo.png" alt="לוגו" class="pdf-footer-logo">
-            </div>
-            
         </body>
         </html>
     `);
