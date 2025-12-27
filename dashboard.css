@@ -129,12 +129,20 @@ h3 {
     z-index: 1;
 }
 
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
 .footer-logo {
-    height: 35px;
-    width: auto;
-    max-width: 35px;
-    max-height: 35px;
-    object-fit: contain;
+    height: 35px !important;
+    width: auto !important;
+    max-width: 35px !important;
+    max-height: 35px !important;
+    object-fit: contain !important;
     z-index: 1;
 }
 
