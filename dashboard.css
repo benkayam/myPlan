@@ -1397,9 +1397,17 @@ h3 {
     
     .footer-logo {
         height: 35px !important;
-        width: 35px !important;
+        width: auto !important;
+        max-width: 35px !important;
+        max-height: 35px !important;
+        object-fit: contain !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+    }
+    
+    .footer {
+        height: 50px !important;
+        overflow: hidden !important;
     }
     
     .dashboard-header {
