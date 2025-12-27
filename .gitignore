@@ -49,6 +49,18 @@ package-lock.json
 # Large PDFs
 *.pdf
 
-# Excel sample files (optional - remove if you want to include)
-# *.xlsx
-# *.xls
+# Excel sample files
+*.xlsx
+*.xls
+
+# Documentation files
+DEVELOPER_NOTES.md
+PROJECT_SUMMARY.md
+START.md
+EXCEL_STRUCTURE.md
+
+# Alternative structures
+index.html
+css/
+js/
+docs/
