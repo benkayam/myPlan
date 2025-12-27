@@ -41,10 +41,12 @@ npm-debug.log*
 # Backup files
 *.bak
 *.backup
+Archive/*_20*
 
 # Node modules
 node_modules/
 package-lock.json
+package.json
 
 # Large PDFs
 *.pdf
