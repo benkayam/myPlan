@@ -823,10 +823,10 @@ function renderTodayTasks() {
                 taskCard.innerHTML = `
                     <div class="task-header">
                         <span class="task-employee">${employee.name}</span>
-                        ${task.requirement ? `<span class="task-req">${task.requirement}</span>` : ''}
+                        ${task.requirement ? `<span class="task-req">${linkifyJiraTickets(task.requirement)}</span>` : ''}
                     </div>
-                    <div class="task-title">${task.subTask}</div>
-                    ${task.task ? `<div class="task-parent">${task.task}</div>` : ''}
+                    <div class="task-title">${linkifyJiraTickets(task.subTask)}</div>
+                    ${task.task ? `<div class="task-parent">${linkifyJiraTickets(task.task)}</div>` : ''}
                     <div class="task-meta">
                         <span>${task.effort} ימי עבודה</span>
                         <span>${formatShortDate(task.startDate)} - ${formatShortDate(task.endDate)}</span>
@@ -1285,10 +1285,10 @@ function renderEmployeeDetails() {
                     <div class="task-header">
                         <span class="task-employee">${employee.name}</span>
                         ${hasOverlaps ? '<span class="task-warning">⚠️ יש חפיפות</span>' : ''}
-                        ${task.requirement ? `<span class="task-req">${task.requirement}</span>` : ''}
+                        ${task.requirement ? `<span class="task-req">${linkifyJiraTickets(task.requirement)}</span>` : ''}
                     </div>
-                    <div class="task-title">${task.subTask}</div>
-                    ${task.task ? `<div class="task-parent">${task.task}</div>` : ''}
+                    <div class="task-title">${linkifyJiraTickets(task.subTask)}</div>
+                    ${task.task ? `<div class="task-parent">${linkifyJiraTickets(task.task)}</div>` : ''}
                     <div class="task-meta">
                         <span>${task.effort} ימי עבודה</span>
                         <span>${formatShortDate(task.startDate)} - ${formatShortDate(task.endDate)}</span>
