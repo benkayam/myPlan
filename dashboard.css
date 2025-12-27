@@ -125,12 +125,18 @@ h3 {
 .dashboard-header .header-logo {
     height: 35px;
     width: auto;
-    object-fit: contain;
-    mix-blend-mode: screen; /* מסיר את הרקע הכהן, משאיר רק את הצבעים */
-    opacity: 0.95;
     position: relative;
     z-index: 1;
 }
+
+.footer-logo {
+    height: 35px;
+    width: 35px;
+    z-index: 1;
+}
+
+
+
 
 .dashboard-header h1 {
     color: var(--white);
@@ -1370,8 +1376,17 @@ h3 {
 /* Print Styles - הדפסה */
 @media print {
     .header-logo {
-        height: 40px;
+        height: 35px !important;
+        width: auto !important;
+        max-width: 35px !important;
         filter: none !important; /* בהדפסה - מציג את הצבע המקורי */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .footer-logo {
+        height: 35px !important;
+        width: 35px !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
