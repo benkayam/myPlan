@@ -1,4 +1,4 @@
-# myPlan - דשבורד ניהול צוות
+# myPlan - Mobile Version Status
 
 <div align="center">
 

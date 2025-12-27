@@ -1166,9 +1166,6 @@ window.exportVersionToPDF = function(versionName) {
                 ${featuresHTML}
             </div>
             
-            <div class="footer">
-                מערכת ניהול צוות • myPlan Dashboard
-            </div>
         </body>
         </html>
     `);
