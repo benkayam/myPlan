@@ -486,7 +486,7 @@ function displayDashboard() {
         
         // Show file name and clear button
         fileInfo.innerHTML = `
-            <span>📄 ${currentFileName || 'קובץ נטען'} • ${workbookData.length} עובדים</span>
+            <span>📄 ${currentFileName || 'קובץ נטען'}</span>
             <button class="btn-clear-data" onclick="clearLocalStorage()" title="מחק נתונים ורענן">🗑️</button>
         `;
         
@@ -862,7 +862,6 @@ function renderVersionStatus() {
             <div class="version-header">
                 <h3 data-status="${statusClass}">${statusIcon} ${version.name}</h3>
                 <div class="version-meta">
-                    <span>👥 ${version.employees.length} עובדים</span>
                     <span>📋 ${version.features.length} פיצ'רים</span>
                     <button class="btn-export-pdf" onclick="exportVersionToPDF('${version.name}')">
                         📄 ייצא ל-PDF
@@ -957,7 +956,6 @@ window.exportVersionToPDF = function(versionName) {
                 <div class="feature-icon">${featureIcon}</div>
                 <div class="feature-name">${feature.name}</div>
                 <div class="feature-status">${getStatusName(feature.status)}</div>
-                <div class="feature-employees">${employees.join(', ')}</div>
                 <div class="feature-qa">${feature.qaDate ? formatShortDate(feature.qaDate) : '-'}</div>
             </div>
         `;
@@ -1070,7 +1068,7 @@ window.exportVersionToPDF = function(versionName) {
                 
                 .feature-row {
                     display: grid;
-                    grid-template-columns: 30px 2fr 1fr 1.5fr 0.8fr;
+                    grid-template-columns: 30px 2fr 1fr 0.8fr;
                     gap: 8px;
                     padding: 8px 10px;
                     border-bottom: 1px solid #E7ECF1;
@@ -1145,10 +1143,6 @@ window.exportVersionToPDF = function(versionName) {
                     <div class="value" style="color: ${statusColors[statusClass]}">${getStatusName(version.overallStatus)}</div>
                 </div>
                 <div class="summary-item">
-                    <div class="label">עובדים</div>
-                    <div class="value">${version.employees.length}</div>
-                </div>
-                <div class="summary-item">
                     <div class="label">פיצ'רים</div>
                     <div class="value">${version.features.length}</div>
                 </div>
@@ -1158,7 +1152,6 @@ window.exportVersionToPDF = function(versionName) {
                 <div></div>
                 <div>פיצ'ר</div>
                 <div>סטטוס</div>
-                <div>עובדים</div>
                 <div>QA</div>
             </div>
             
