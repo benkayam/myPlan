@@ -956,6 +956,7 @@ window.exportVersionToPDF = function(versionName) {
                 <div class="feature-icon">${featureIcon}</div>
                 <div class="feature-name">${feature.name}</div>
                 <div class="feature-status">${getStatusName(feature.status)}</div>
+                <div class="feature-employees">${employees.join(', ')}</div>
                 <div class="feature-qa">${feature.qaDate ? formatShortDate(feature.qaDate) : '-'}</div>
             </div>
         `;
@@ -1066,9 +1067,20 @@ window.exportVersionToPDF = function(versionName) {
                     font-weight: 600;
                 }
                 
+                .table-header {
+                    display: grid;
+                    grid-template-columns: 30px 2fr 1fr 1.5fr 0.8fr;
+                    gap: 8px;
+                    padding: 10px;
+                    background: #2A4066;
+                    color: white;
+                    font-weight: 600;
+                    border-radius: 6px 6px 0 0;
+                }
+                
                 .feature-row {
                     display: grid;
-                    grid-template-columns: 30px 2fr 1fr 0.8fr;
+                    grid-template-columns: 30px 2fr 1fr 1.5fr 0.8fr;
                     gap: 8px;
                     padding: 8px 10px;
                     border-bottom: 1px solid #E7ECF1;
@@ -1152,6 +1164,7 @@ window.exportVersionToPDF = function(versionName) {
                 <div></div>
                 <div>פיצ'ר</div>
                 <div>סטטוס</div>
+                <div>עובדים</div>
                 <div>QA</div>
             </div>
             
