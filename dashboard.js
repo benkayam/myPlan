@@ -119,6 +119,14 @@ function formatShortDate(date) {
     return d.toLocaleDateString('he-IL', { day: '2-digit', month: '2-digit' });
 }
 
+// Convert Jira tickets to clickable links
+function linkifyJiraTickets(text) {
+    if (!text) return text;
+    // Match patterns like DEV-12345, RQ-12345, etc.
+    const jiraPattern = /([A-Z]+-\d+)/g;
+    return text.replace(jiraPattern, '<a href="https://fibijira.fibi.corp/browse/$1" target="_blank" class="jira-link">$1</a>');
+}
+
 // Map color to status
 function getStatusFromColor(cellStyle) {
     if (!cellStyle || !cellStyle.fgColor) return 'unknown';
@@ -890,7 +898,7 @@ function renderVersionStatus() {
             featureCard.innerHTML = `
                 <div class="feature-icon">${featureIcon}</div>
                 <div class="feature-content">
-                    <div class="feature-name">${feature.name}</div>
+                    <div class="feature-name">${linkifyJiraTickets(feature.name)}</div>
                     <div class="feature-meta">
                         <span class="feature-status">${getStatusName(feature.status)}</span>
                         <span class="feature-employees">👤 ${employees.join(', ')}</span>
@@ -954,7 +962,7 @@ window.exportVersionToPDF = function(versionName) {
         featuresHTML += `
             <div class="feature-row">
                 <div class="feature-icon">${featureIcon}</div>
-                <div class="feature-name">${feature.name}</div>
+                <div class="feature-name">${linkifyJiraTickets(feature.name)}</div>
                 <div class="feature-status">${getStatusName(feature.status)}</div>
                 <div class="feature-employees">${employees.join(', ')}</div>
                 <div class="feature-qa">${feature.qaDate ? formatShortDate(feature.qaDate) : '-'}</div>
@@ -1164,7 +1172,7 @@ window.exportVersionToPDF = function(versionName) {
                 <div></div>
                 <div>פיצ'ר</div>
                 <div>סטטוס</div>
-                <div>עובדים</div>
+                <div>מי על זה</div>
                 <div>QA</div>
             </div>
             
