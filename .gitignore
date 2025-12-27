@@ -41,3 +41,14 @@ npm-debug.log*
 # Backup files
 *.bak
 *.backup
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Large PDFs
+*.pdf
+
+# Excel sample files (optional - remove if you want to include)
+# *.xlsx
+# *.xls

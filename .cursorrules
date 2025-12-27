@@ -1,5 +1,25 @@
 # חוקי הפרויקט myPlan
 
+## 👨‍💻 רמת מקצועיות
+
+**כל מי שעובד על הקוד הזה הוא אלוף אמיתי עם לפחות 5 שנות ניסיון ב-Front End!**
+
+**זה אומר:**
+- ✅ קוד נקי, מסודר ו-maintainable
+- ✅ Best practices של JavaScript, HTML, CSS
+- ✅ Performance optimization (avoid reflows, minimize DOM manipulation)
+- ✅ Accessibility (ARIA, semantic HTML)
+- ✅ Cross-browser compatibility
+- ✅ Progressive enhancement
+- ✅ Code reusability ו-DRY principles
+- ✅ Error handling מקצועי
+- ✅ Comments רק כשצריך (self-documenting code)
+- ✅ Modern ES6+ syntax
+
+**אם אתה לא בטוח איך לעשות משהו - תחשוב איך Senior Developer היה עושה את זה!**
+
+---
+
 ## 📝 תיעוד וגיבוי - חובה!
 
 ### לפני כל שינוי קוד:
@@ -93,16 +113,92 @@ myPlan/
 
 ---
 
-## ✅ Check-list לפני Commit
+## 🧪 בדיקות - חובה לפני כל שינוי!
 
-- [ ] הקוד עובד (בדקת בדפדפן?)
-- [ ] README מעודכן
-- [ ] גיבוי נשמר ב-Archive (אם שינוי גדול)
-- [ ] לא נשארו console.log מיותרים
-- [ ] CSS תואם לסגנון Apple
-- [ ] הכל בעברית (למעט קוד)
+### 1. בדיקה תחבירית (Syntax)
+```bash
+# פתח את Developer Console בדפדפן (F12)
+# וודא שאין שגיאות אדומות
+```
+- ✅ JavaScript תקין (אין syntax errors)
+- ✅ CSS תקין (אין parsing errors)
+- ✅ HTML תקין (אין broken tags)
+
+### 2. בדיקות פונקציונליות (Unit Tests)
+בדוק את הפונקציות הבאות עם דוגמאות:
+
+**טען קובץ אקסל לדוגמה:**
+```javascript
+// פתח Console ובדוק:
+console.log(workbookData); // יש נתונים?
+console.log(workbookData[0].tasks.length); // משימות נטענו?
+```
+
+**בדוק חישוב ימי עבודה:**
+```javascript
+const start = new Date('2024-01-01');
+const end = new Date('2024-01-05');
+console.log(countWorkDays(start, end)); // צריך להיות 5 (א'-ה')
+```
+
+**בדוק זיהוי חפיפות:**
+```javascript
+const employee = workbookData[0];
+const overlaps = findOverlappingDates(employee);
+console.log(overlaps); // רשימת ימים עם חפיפות
+```
+
+**בדוק המרת תאריכים:**
+```javascript
+const excelDate = 45292; // 01/01/2024
+const jsDate = excelDateToJSDate(excelDate);
+console.log(jsDate); // Date object תקין?
+```
+
+### 3. בדיקות UI/UX
+- ✅ הדשבורד נטען ללא שגיאות
+- ✅ כפתור "טען קובץ" עובד
+- ✅ ציר הזמן מוצג נכון
+- ✅ חפיפות מסומנות באדום
+- ✅ ניווט בין חודשים עובד
+- ✅ Tooltips מופיעים על hover
+- ✅ Responsive - עובד במובייל
+
+### 4. בדיקות קצה (Edge Cases)
+- ✅ קובץ ריק - מוצג Empty State
+- ✅ גיליון ללא משימות - לא קורס
+- ✅ תאריכים לא תקינים - מסונן
+- ✅ עובד ללא שם - מטפל בזה
 
 ---
 
-**זכור:** התיעוד זה חלק מהקוד. קוד בלי תיעוד = קוד לא גמור.
+## ✅ Check-list לפני Commit
+
+- [ ] **בדיקה תחבירית** - אין שגיאות ב-Console
+- [ ] **Unit Tests** - כל הפונקציות עובדות
+- [ ] **בדיקת UI** - הדשבורד נראה תקין
+- [ ] **הקוד עובד** - בדקת בדפדפן עם קובץ אמיתי
+- [ ] **README מעודכן** - תיעוד השינויים
+- [ ] **גיבוי נשמר** - Archive (אם שינוי גדול)
+- [ ] **לא נשארו console.log** - ניקיון קוד
+- [ ] **CSS תואם לסגנון Apple** - עיצוב עקבי
+- [ ] **הכל בעברית** - למעט קוד
+
+---
+
+## 🔧 כלי בדיקה
+
+### לפתוח Developer Tools:
+- **Chrome/Edge:** F12 או Ctrl+Shift+I
+- **Firefox:** F12 או Ctrl+Shift+I
+- **Safari:** Cmd+Option+I
+
+### טאבים חשובים:
+- **Console** - שגיאות JavaScript
+- **Network** - קבצים שנטענו
+- **Elements** - בדיקת HTML/CSS
+
+---
+
+**זכור:** קוד שלא נבדק = קוד שלא עובד. בדיקות זה חלק מהפיתוח!
 
