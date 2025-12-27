@@ -131,7 +131,10 @@ h3 {
 
 .footer-logo {
     height: 35px;
-    width: 35px;
+    width: auto;
+    max-width: 35px;
+    max-height: 35px;
+    object-fit: contain;
     z-index: 1;
 }
 
