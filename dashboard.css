@@ -1395,19 +1395,24 @@ h3 {
         print-color-adjust: exact;
     }
     
-    .footer-logo {
-        height: 35px !important;
-        width: auto !important;
-        max-width: 35px !important;
-        max-height: 35px !important;
-        object-fit: contain !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+    .footer {
+        display: block !important;
+        height: 40px !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        text-align: center !important;
     }
     
-    .footer {
-        height: 50px !important;
-        overflow: hidden !important;
+    .footer-logo {
+        display: inline-block !important;
+        height: 30px !important;
+        width: 30px !important;
+        max-width: 30px !important;
+        max-height: 30px !important;
+        object-fit: scale-down !important;
+        transform: scale(0.7) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
     
     .dashboard-header {
