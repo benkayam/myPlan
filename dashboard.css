@@ -577,7 +577,7 @@ h3 {
     right: 0;
     background: inherit;
     z-index: 5;
-    color: var(--white);
+    color: var(--primary);
 }
 
 .timeline-day,
